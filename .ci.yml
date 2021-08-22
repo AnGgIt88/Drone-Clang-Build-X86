@@ -4,10 +4,6 @@ version: rev1.5_template
 steps:
    - name: Build Cmake
      image: xyzuan/xdocker:latest
-     commands:
-      - bash build-cmake.sh
-   - name: LLVM-tc Compilation
-     image: xyzuan/xdocker:latest
      environment:
        LLVM_NAME:
          from_secret: LLVM_NAME
@@ -23,5 +19,9 @@ steps:
          from_secret: GH_TOKEN
        GH_PUSH_REPO_URL:
          from_secret: GH_PUSH_REPO_URL
-      commands:
-        - bash build-tc.sh
+     commands:
+      - bash build-cmake.sh
+   - name: LLVM-tc Compilation
+     image: xyzuan/xdocker:latest
+     commands:
+      - bash build-tc.sh
