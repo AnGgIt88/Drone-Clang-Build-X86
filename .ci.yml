@@ -3,11 +3,11 @@ name : LLVM Toolchain Compiler
 version: rev1.5_template
 steps:
    - name: Build Cmake
-     image: xyzuan/xdocker:latest
+     image: brock5555/recovery
      commands:
       - bash build-cmake.sh
    - name: LLVM-tc Compilation
-     image: xyzuan/xdocker:latest
+     image: brock5555/recovery
      environment:
        LLVM_NAME:
          from_secret: LLVM_NAME
