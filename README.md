@@ -1,6 +1,6 @@
 # Toolchain build scripts
 
-![NFS Toolchain build](https://github.com/AnGgIt86/llvmTC/workflows/NFS%20Toolchain%20build/badge.svg)
+[![Build Status](https://cloud.drone.io/api/badges/AnGgIt88/Drone-Clang-Build/status.svg)](https://cloud.drone.io/AnGgIt88/Drone-Clang-Build)
 
 There are times where a tip of tree LLVM build will have some issue fixed and it isn't available to you, maybe because it isn't in a release or it isn't available through your distribution's package management system. At that point, to get that fix, LLVM needs to be compiled, which sounds scary but is [rather simple](https://llvm.org/docs/GettingStarted.html). The `build-llvm.py` script takes it a step farther by trying to optimize both LLVM's build time by:
 
