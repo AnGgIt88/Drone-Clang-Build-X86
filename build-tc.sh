@@ -44,9 +44,11 @@ tg_post_msg "<b>$LLVM_NAME: Building LLVM. . .</b>"
 ./build-llvm.py \
 	--clang-vendor "$LLVM_NAME" \
 	--projects "clang;lld;polly" \
-	--targets "ARM;AArch64" \
+	--targets "ARM;AArch64;X86" \
 	--shallow-clone \
 	--incremental \
+        --pgo kernel-defconfig \
+        --lto full \
 	--build-type "Release" 2>&1 | tee build.log
 
 # Check if the final clang binary exists or not.
@@ -59,7 +61,7 @@ tg_post_msg "<b>$LLVM_NAME: Building LLVM. . .</b>"
 # Build binutils
 msg "$LLVM_NAME: Building binutils..."
 tg_post_msg "<b>$LLVM_NAME: Building Binutils. . .</b>"
-./build-binutils.py --targets arm aarch64
+./build-binutils.py --targets arm aarch64 x86_64
 
 # Remove unused products
 rm -fr install/include
