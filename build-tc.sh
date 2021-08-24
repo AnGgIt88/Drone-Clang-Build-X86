@@ -47,6 +47,7 @@ tg_post_msg "<b>$LLVM_NAME: Building LLVM. . .</b>"
 	--targets "ARM;AArch64" \
 	--shallow-clone \
 	--incremental \
+        --lto full \
 	--build-type "Release" 2>&1 | tee build.log
 
 # Check if the final clang binary exists or not.
