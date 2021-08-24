@@ -2,10 +2,6 @@ kind: pipeline
 name : LLVM Toolchain Compiler
 version: rev1.5_template
 steps:
-   - name: Build Cmake
-     image: xyzuan/xdocker:latest
-     commands:
-      - bash build-cmake.sh
    - name: LLVM-tc Compilation
      image: xyzuan/xdocker:latest
      environment:
